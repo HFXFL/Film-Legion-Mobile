@@ -19,43 +19,72 @@ export default function Home() {
           <div>
           </div>
         </div>  
-<Image
+    <Image
     width={'100vw'}
+    height={'50vw'}
     src='https://res.cloudinary.com/ddyecvz0i/image/upload/v1676410495/FL/image001_1_gmdscx.png'
-    alt='Scannan'
+    alt='ScannanImage'
+  />  
+  <Image
+    width={'90vw'}
+    pb={'20px'}
+    pt={'20px'}
+    src='https://res.cloudinary.com/ddyecvz0i/image/upload/v1668367569/FL/ScannanLgo_lvfgpi.png'
+    alt='ScannanLogo'
   />
 
+    <a
+    href="https://filmlegion.com" 
+    className={styles.card}
+    target="_blank"
+    rel="noopener noreferrer">
+    <h2>
+      Enter 
+    </h2>
+    </a>
 
+        <div className={styles.grid}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 className={inter.className}>
+            Here is your chance to win a grand prize, from $1,000! 
+            </h3>
+
+          </a>
+        </div>
+
+        <div className={styles.grid2}>
+          <a
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className={inter.className}>
+            We are using NFTs differently, are you up to the challenge? This is your chance to win a cash or crypto prize with the Scannan series and Film-Legion. Each NFT cost between ¢50 and $1.20 (in MATIC), and you will be assisting in the funding of critical research into severe, enduring mental health and physical health disorders. You will also be crowdfunding the production of Scannan, a 3-part feature length series, 30 YEARS in the making. Only on FilmLegion.com
+            </p>
+          </a>
+        </div>
+        <Image
+    width={'30vw'}
+    src='https://res.cloudinary.com/ddyecvz0i/image/upload/v1676487528/FL/fllogo_m8xsex.png'
+    alt='Fl-Logo'
+  />
+        
         <div className={styles.grid}>
           <a
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h3 className={inter.className}>
-            Here is your chance to win a grand prize, from $1,000! <span></span>
-            </h3>
-            <p className={inter.className}>
-            We are using NFTs differently, are you up to the challenge? This is your chance to win a cash or crypto prize with the Scannan series and Film-Legion. Each NFT cost between ¢50 and $1.20 (in MATIC), and you will be assisting in the funding of critical research into severe, enduring mental health and physical health disorders. You will also be crowdfunding the production of Scannan, a 3-part feature length series, 30 YEARS in the making. Only on FilmLegion.com
-            </p>
-          </a>
-
-          <a
-            href="https://filmlegion.com"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className} color='#55ff00'>
-              Enter 
-            </h2>
             <p className={inter.className}>
             A single cryptic clue is hidden within these images. You must collect all of the correct characters to recieve a secret question. Follow the questions to get closer to the ever growing prize, and a guarenteed $1,000. Please sell at least 2 NFTs to WIN, and sell more so others may participate and raise money for producing Scannan, and fund these worthy causes.
             </p>
           </a>
-
-          
+   
         </div>
+        
       </main>
     </>
   )
