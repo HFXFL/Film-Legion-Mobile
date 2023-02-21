@@ -61,7 +61,7 @@ export default function Home (){
         <div className={styles.title}
           >
             <h3>
-            Here's your chance to win a grand prize, from $1,000! 
+            Here is your chance to win a grand prize, from $1,000! 
             </h3>
         </div>
         
