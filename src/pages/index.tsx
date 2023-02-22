@@ -1,5 +1,5 @@
 import styles from '@/styles/Custom.module.css';
-import { Box, Button, HStack, Image } from "@chakra-ui/react";
+import { Box, Button, HStack, Image, Stack } from "@chakra-ui/react";
 import Head from "next/head";
 import {
   IoLogoInstagram,
@@ -26,15 +26,27 @@ export default function Home (){
       Film-Legion presents the all new Scannan Collection.
     </h4>
 
-    {/* <Box pb={'30px'}>
-      <h4 className={styles.main}>Socials Here in a GRID</h4>
-    </Box> */}
 
     <HStack p={'20'} ml={'25%'} gap={'5'}>
       <IoLogoYoutube size={'20px'} color='#bab3b3' />
       <IoLogoTwitter size={'20px'} color='#bab3b3' />
       <IoLogoInstagram size={'20px'} color='#bab3b3' />
-      <Button bg={'#55ff00'} border={'1px'} colorScheme={'green'}>METAMASK</Button>
+
+      <Button 
+      bg={'mediumpurple'} 
+      border={'1px'} 
+      colorScheme={'green'}
+      borderRadius={'0.5rem'}
+      w={'120px'}
+      h={'45px'}
+      
+      >
+    <h3>
+      METAMASK
+    </h3>
+      </Button>
+
+
     </HStack>
       <hr/>
 
@@ -75,34 +87,61 @@ export default function Home (){
             We are using NFTs differently, are you up to the challenge? This is your chance to win a cash or crypto prize with the Scannan series and Film-Legion. Each NFT cost between ¢50 and $1.20 (in MATIC), and you will be assisting in the funding of critical research into severe, enduring mental health and physical health disorders. You will also be crowdfunding the production of Scannan, a 3-part feature length series, 30 YEARS in the making. Only on FilmLegion.com
             </h4>
         </div>
-        </div>
- 
+        
         <div className={styles.description}>
         <h4>
             A single cryptic clue is hidden within these images. You must collect all of the correct characters to recieve a secret question. Follow the questions to get closer to the ever growing prize, and a guarenteed $1,000. Please sell at least 2 NFTs to WIN, and sell more so others may participate and raise money for producing Scannan, and fund these worthy causes.
         </h4>
         </div>
-
+        </div>
+ 
         <div className={styles.nftTitle}>
         <h2>
           See The Collections
         </h2>
 
         </div>
-        <Box w={'100vw'} h={'100vw'} bg={'#ffffff'}>
-        <Box w={'10vw'} h={'10vw'} bg='GrayText'></Box>
+        <div className={styles.placeholder}>
+        <Box w={'90vw'} h={'100vw'} bg={'#212121'}> </Box>
+        </div>
+
+        <Stack w={'100vw'} h={'100vw'} bg={'#ffffff'}>
+       <div className={styles.whiteTitles}>
+        <h1>
+          Explore Scannan
+        </h1>
+       </div>
+
+        <HStack>
+        
+        <Button 
+        w={'140px'} 
+        h={'50'}
+        p={'20'}
+        mr={'10vw'} 
+        ml={'10vw'}
+        borderRadius={'0.5rem'}
+        bg={'#ffffff'}
+        borderColor={'mediumpurple'}
+        >
+        All NFT's
+        </Button>
+        <Button 
+        w={'140px'} 
+        h={'50'} 
+        p={'20'} 
+        borderRadius={'0.5rem'}
+        bg={'#ffffff'}
+        borderColor={'mediumpurple'}
+        > 
+        Filter by Wave
+      </Button>
+          
+        </HStack>
 
 
 
-
-
-
-
-
-
-
-
-        </Box>
+        </Stack>
 
     </>
   )
