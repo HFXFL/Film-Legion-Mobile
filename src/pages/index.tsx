@@ -124,7 +124,7 @@ export default function Home (){
         bg={'#ffffff'}
         borderColor={'mediumpurple'}
         >
-        All NFT's
+        All NFTs
         </Button>
         <Button 
         w={'140px'} 
