@@ -111,34 +111,35 @@ export default function Home (){
           Explore Scannan
         </h1>
        </div>
-
-        <HStack>
+        <div>
+        <HStack p={'20'} ml={35} gap={'5'}>
         
         <Button 
         w={'140px'} 
         h={'50'}
         p={'20'}
-        mr={'10vw'} 
-        ml={'10vw'}
         borderRadius={'0.5rem'}
         bg={'#ffffff'}
         borderColor={'mediumpurple'}
         >
+        <h3>
         All NFTs
+        </h3>
         </Button>
         <Button 
         w={'140px'} 
         h={'50'} 
-        p={'20'} 
         borderRadius={'0.5rem'}
         bg={'#ffffff'}
         borderColor={'mediumpurple'}
         > 
+        <h3>
         Filter by Wave
+        </h3>
       </Button>
           
         </HStack>
-
+      </div>
 
 
         </Stack>
