@@ -1,6 +1,8 @@
+import Body from '@/components/Body';
 import styles from '@/styles/Custom.module.css';
 import { Box, Button, HStack, Image, Stack } from "@chakra-ui/react";
 import Head from "next/head";
+import { GiBreakingChain, GiFilmSpool, GiFilmStrip, GiHammerBreak } from "react-icons/gi";
 import {
   IoLogoInstagram,
   IoLogoTwitter,
@@ -8,7 +10,6 @@ import {
   IoMenuSharp,
   IoSearchSharp
 } from "react-icons/io5";
-
 import { MdAccountCircle } from "react-icons/md";
 
 
@@ -105,7 +106,7 @@ export default function Home (){
         <Box w={'90vw'} h={'100vw'} bg={'#212121'}> </Box>
         </div>
 
-        <Stack w={'100vw'} h={'100vw'} bg={'#ffffff'}>
+        <Stack w={'100vw'} h={'100%'} bg={'#ffffff'}>
        <div className={styles.whiteTitles}>
         <h1>
           Explore Scannan
@@ -140,9 +141,66 @@ export default function Home (){
           
         </HStack>
       </div>
-
-
+      <Body />
+      <h4> use show more filter</h4>
         </Stack>
+
+      <Stack w={'100vw'} h={'100vw'} bg={'#000000'}>
+        <div className={styles.main}>
+        <h1>
+          Collect and Sell Your NFTs
+        </h1>
+        <h4 className={styles.descriptionCentred}>
+          Film-Legion is dedicated to offering safe and vetted projects as well as helping them grow their own fan base.
+        </h4>
+        </div>
+        
+        <div className={styles.descIcons}>
+        <GiBreakingChain size={'50px'} />
+        </div>
+        <h1 className={styles.blackTitles}>
+          Blockchain Entertainment
+        </h1>
+        <h4 className={styles.descriptionLeft}>
+        The new generation of unparalleled media engagement. Support the latest film makers by purchasing their crowdfunding tokens and NFTs, take part in airdrops, and stream their latest work. All in one place!
+        </h4>
+
+
+        <div className={styles.descIcons}>
+        <GiHammerBreak size={'50px'} />
+        </div>
+        <h1 className={styles.blackTitles}>
+          Building Legions of Fans
+        </h1>
+        <h4 className={styles.descriptionLeft}>
+          Film-Legion allows you to privately own dedicated project tokens and NFT's that represent the level of support for a campaign. After the launch, you will be able to exchange these for exclusive rewards, swap on a DEX, or sell them. 
+        </h4>
+
+
+        <div className={styles.descIcons}>
+        <GiFilmStrip size={'50px'} />
+        </div>
+
+        
+        <h1 className={styles.blackTitles}>
+          Get Made!
+        </h1>
+        <h4 className={styles.descriptionLeft}>
+          See how you can get your showcase on this platform! Hedge-FX is here to help by offering access to the Web3 world tailored to your project. If you are starting from script, need a streaming stage, or raising capital, we will scale to your needs with zero upfront, always.  
+        </h4>
+
+
+        <div className={styles.descIcons}>
+        <GiFilmSpool size={'50px'} />
+        </div>
+
+        <h1 className={styles.blackTitles}>
+          Get Behind the Scenes
+        </h1>
+        <h4 className={styles.descriptionLeft}>
+          Keep up to date with how a project is progressing with news, podcasts, and behind the scenes footage, before the red carpet rolls out. Use these features to help make an informed decision about your crowdfinding options. Equity and steaking may also be available, depending on your interest. Join our community to discuss with other like minded Legionaries.  
+        </h4>
+      </Stack>
 
     </>
   )
