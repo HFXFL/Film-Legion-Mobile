@@ -173,7 +173,7 @@ export default function Home (){
           Building Legions of Fans
         </h1>
         <h4 className={styles.descriptionLeft}>
-          Film-Legion allows you to privately own dedicated project tokens and NFT's that represent the level of support for a campaign. After the launch, you will be able to exchange these for exclusive rewards, swap on a DEX, or sell them. 
+          Film-Legion allows you to privately own dedicated project tokens and NFTs that represent the level of support for a campaign. After the launch, you will be able to exchange these for exclusive rewards, swap on a DEX, or sell them. 
         </h4>
 
 
