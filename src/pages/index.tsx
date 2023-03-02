@@ -1,6 +1,7 @@
 import Body from '@/components/Body';
 import styles from '@/styles/Custom.module.css';
 import { Box, Button, HStack, Image, Stack } from "@chakra-ui/react";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Head from "next/head";
 import { GiBreakingChain, GiFilmSpool, GiFilmStrip, GiHammerBreak } from "react-icons/gi";
 import {
@@ -11,7 +12,6 @@ import {
   IoSearchSharp
 } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
-
 
 
 export default function Home (){
@@ -33,20 +33,9 @@ export default function Home (){
       <IoLogoTwitter size={'20px'} color='#bab3b3' />
       <IoLogoInstagram size={'20px'} color='#bab3b3' />
 
-      <Button 
-      bg={'mediumpurple'} 
-      border={'1px'} 
-      colorScheme={'green'}
-      borderRadius={'0.5rem'}
-      w={'120px'}
-      h={'45px'}
-      
-      >
-    <h3>
-      METAMASK
-    </h3>
-      </Button>
 
+
+    <ConnectButton label="Sign in" />
 
     </HStack>
       <hr/>
