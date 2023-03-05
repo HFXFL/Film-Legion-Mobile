@@ -5,11 +5,11 @@ import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from 'next/app';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet } from "wagmi/chains";
+import { polygonMumbai } from "wagmi/chains"; //mainnet
 import { publicProvider } from 'wagmi/providers/public';
 
 const { provider, webSocketProvider, chains } = configureChains(
-  [mainnet],
+  [polygonMumbai],
   [publicProvider()]
 );
 

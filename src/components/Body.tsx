@@ -36,7 +36,7 @@ const Body: NextPage = () => {
             >
               <Link href={`/assets/${nft.id}`}
                     key={nft.assetContractAddress + nft.id}>
-                <NFTCard
+                <NFTCard 
                   nft={{
                     name: nft.asset.name as string,
                     tokenUri: nft.asset.image as string,

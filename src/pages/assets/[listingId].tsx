@@ -1,5 +1,5 @@
 import styles from '@/styles/Custom.module.css';
-import { Box, Button, Divider, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Divider, HStack, Image, Stack, Text } from '@chakra-ui/react';
 import { useContract, useListing } from "@thirdweb-dev/react";
 import Head from 'next/head';
 //import { Header } from "components/modules";
@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import { IoLogoInstagram, IoLogoTwitter, IoLogoYoutube, IoMenuSharp, IoSearchSharp } from 'react-icons/io5';
 import { MdAccountCircle } from 'react-icons/md';
 //import { logo } from '../../src/components/helpers/logo';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { BigNumber } from "ethers";
 
 
 export default function NFT() {
@@ -17,12 +19,22 @@ export default function NFT() {
     "marketplace",
   );
 
+  const buyoutListing = async () => {
+    try {
+      await contract?.buyoutListing(BigNumber.from(listingId), 1);
+    } catch (e) {
+      alert(e);
+    }
+  };
+
   const { data: nft, isLoading } = useListing(contract, listingId as string);
   if (isLoading || !nft) {
     return (
       <Text pl={'45vw'} pt={'20vw'}>Loading Project...</Text>
     );
 }
+
+
   return (
     <>
 
@@ -40,19 +52,9 @@ export default function NFT() {
       <IoLogoTwitter size={'20px'} color='#bab3b3' />
       <IoLogoInstagram size={'20px'} color='#bab3b3' />
 
-      <Button 
-      bg={'mediumpurple'} 
-      border={'1px'} 
-      colorScheme={'green'}
-      borderRadius={'0.5rem'}
-      w={'120px'}
-      h={'45px'}
-      
-      >
-    <h3>
-      METAMASK
-    </h3>
-      </Button>
+      <Stack >
+    <ConnectButton label="Connect Wallet" />
+    </Stack>
 
 
     </HStack>
@@ -120,8 +122,6 @@ export default function NFT() {
 <div>
 <Box
 mt={'10'}>
-
-
     <iframe
     src={`https://gateway.ipfscdn.io/ipfs/Qmcine1gpZUbQ73nk7ZGCcjKBVFYXrEtqrhujXk3HDQ6Nn/marketplace.html?contract=0xeA8B599cECEFB601D35923cd4A59C6e95272BEc4&chainId=80001&listingId=${nft.id}&theme=dark&primaryColor=black`}
     width="400px"
@@ -138,7 +138,20 @@ pb={'20'}>
   <a href='https://www.thirdweb.com' rel="noopener noreferrer" target="_blank">
 <Image w={'100px'} h={'30px'} src="https://res.cloudinary.com/ddyecvz0i/image/upload/v1673130522/FL/Thirdweblogo_nnvagy.png">
 </Image>   
-</a>   
+</a>
+
+
+<div>
+              <p>
+                {nft?.buyoutCurrencyValuePerToken?.displayValue}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={buyoutListing}
+            >
+              Purchase
+            </button>
 </>
      
   );

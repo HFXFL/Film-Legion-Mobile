@@ -1,6 +1,7 @@
 import Body from '@/components/Body';
 import styles from '@/styles/Custom.module.css';
-import { Box, Button, HStack, Image, Stack } from "@chakra-ui/react";
+import { AddIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { Box, Button, HStack, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Stack } from "@chakra-ui/react";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Head from "next/head";
 import { GiBreakingChain, GiFilmSpool, GiFilmStrip, GiHammerBreak } from "react-icons/gi";
@@ -8,7 +9,6 @@ import {
   IoLogoInstagram,
   IoLogoTwitter,
   IoLogoYoutube,
-  IoMenuSharp,
   IoSearchSharp
 } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
@@ -34,8 +34,9 @@ export default function Home (){
       <IoLogoInstagram size={'20px'} color='#bab3b3' />
 
 
-
-    <ConnectButton label="Sign in" />
+    <Stack >
+    <ConnectButton label="Connect Wallet" />
+    </Stack>
 
     </HStack>
       <hr/>
@@ -51,7 +52,40 @@ export default function Home (){
       />
       <MdAccountCircle size={'30px'} color='#55ff00' />
       <IoSearchSharp size={'30px'} color='#55ff00' />
-      <IoMenuSharp size={'30px'} color='#ffffff' />
+      {/* <IoMenuSharp size={'30px'} color='#ffffff' /> */}
+      <Menu>
+
+
+      <MenuButton className={styles.menu}
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon  />}
+
+    transition='all 0.2s' />
+
+    <MenuList >
+    <MenuItem h={'50'} w={'150px'} icon={<AddIcon />} bg={'#000000'} >
+      New Tab
+    </MenuItem>
+    <MenuItem h={'50'} w={'150px'} icon={<AddIcon />} bg={'#000000'} >
+      New Tab
+    </MenuItem>
+    <MenuItem h={'50'} w={'150px'} icon={<AddIcon />} bg={'#000000'} >
+      New Tab
+    </MenuItem>
+    <MenuItem h={'50'} w={'150px'} icon={<AddIcon />} bg={'#000000'} >
+      New Tab
+    </MenuItem>
+    <MenuItem h={'50'} w={'150px'} icon={<AddIcon />} bg={'#000000'} >
+      New Tab
+    </MenuItem>
+
+
+
+
+    </MenuList>
+
+      </Menu>
     </HStack>
 <Image
     width={'120%'}
@@ -104,24 +138,13 @@ export default function Home (){
         <div>
         <HStack p={'20'} ml={35} gap={'5'}>
         
-        <Button 
-        w={'140px'} 
-        h={'50'}
-        p={'20'}
-        borderRadius={'0.5rem'}
-        bg={'#ffffff'}
-        borderColor={'mediumpurple'}
-        >
+        <Button className={styles.filterButtons}>
         <h3>
         All NFTs
         </h3>
         </Button>
-        <Button 
-        w={'140px'} 
-        h={'50'} 
-        borderRadius={'0.5rem'}
-        bg={'#ffffff'}
-        borderColor={'mediumpurple'}
+        
+        <Button className={styles.filterButtons}
         > 
         <h3>
         Filter by Wave
