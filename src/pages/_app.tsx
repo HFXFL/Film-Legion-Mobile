@@ -1,16 +1,27 @@
+import React from 'react';
 import '@/styles/globals.css';
 import { darkTheme, getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
-import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+import { ChainId, ThirdwebSDKProvider } from "@thirdweb-dev/react";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from 'next/app';
-import { configureChains, createClient, WagmiConfig } from 'wagmi';
+import { configureChains, createClient, WagmiConfig, Chain, useSigner } from 'wagmi';
 import { polygonMumbai } from "wagmi/chains"; //mainnet
-import { publicProvider } from 'wagmi/providers/public';
+import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+
 
 const { provider, webSocketProvider, chains } = configureChains(
   [polygonMumbai],
-  [publicProvider()]
+  [
+    jsonRpcProvider({
+      rpc: (chain) =>
+        chain.id === ChainId.Mumbai
+          ? {
+              http: `https://mumbai.rpc.thirdweb.com`,
+            }
+          : null,
+    }),
+  ]
 );
 
 const { connectors } = getDefaultWallets({
@@ -18,7 +29,7 @@ const { connectors } = getDefaultWallets({
   chains,
 });
 
-const client = createClient({
+const wagmiClient = createClient({
   provider,
   webSocketProvider,
   autoConnect: true,
@@ -26,17 +37,40 @@ const client = createClient({
   connectors,
 });
 
+function ThirdwebProvider({
 
-const activeChainId = ChainId.Mumbai;
+  wagmiClient,
+  children,
+}: {
+  wagmiClient: any;
+  children: React.ReactNode;
+}) {
+  const { data: signer } = useSigner();
+
+
+
+
+  return (
+    <ThirdwebSDKProvider
+      desiredChainId={ChainId.Mumbai}
+      signer={signer as any}
+      queryClient={wagmiClient.queryClient as any}
+      provider={wagmiClient.provider}
+    > 
+      {children}
+    </ThirdwebSDKProvider>
+  );
+}
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
 
-    <WagmiConfig client={client}>
+    <WagmiConfig client={wagmiClient}>
 
     <SessionProvider session={pageProps.session} refetchInterval={0}>
 
-    <ThirdwebProvider desiredChainId={activeChainId} >
+    <ThirdwebProvider wagmiClient={wagmiClient} >
       
     <RainbowKitProvider
       theme={darkTheme({

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useAccount, useConnect, useDisconnect, useSignMessage } from "wagmi";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 
+
 function SignIn(): JSX.Element {
   const { connectAsync } = useConnect({
     connector: new WalletConnectConnector({ options: { qrcode: true } }),

@@ -7,6 +7,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import NFTCard from "./NFTCard";
 
+
 const Body: NextPage = () => {
   const { contract } = useContract(
     "0xeA8B599cECEFB601D35923cd4A59C6e95272BEc4",

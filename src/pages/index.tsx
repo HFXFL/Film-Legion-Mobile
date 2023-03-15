@@ -1,3 +1,4 @@
+import React from 'react';
 import Body from '@/components/Body';
 import styles from '@/styles/Custom.module.css';
 import { AddIcon, HamburgerIcon } from '@chakra-ui/icons';

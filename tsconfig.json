@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "../Button.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "../Button.tsx", "src/components/Buy.js", "../quantity.tsx"],
   "exclude": ["node_modules"]
 }
